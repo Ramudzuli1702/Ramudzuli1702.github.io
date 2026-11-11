@@ -215,5 +215,8 @@
     "reviewsUrl": "https://script.google.com/macros/s/AKfycbzRC_sSDIjOCgc15SHHkO2LRHP2e85SJZASQ3x9DYF1D5D9mL_IaBbD4-DAoRAURGeVDg/exec?reviews=1",
     "reviewsShown": 3
   },
-  "contactUrl": "https://script.google.com/macros/s/AKfycbzRC_sSDIjOCgc15SHHkO2LRHP2e85SJZASQ3x9DYF1D5D9mL_IaBbD4-DAoRAURGeVDg/exec"
+  "contactUrl": "https://script.google.com/macros/s/AKfycbzRC_sSDIjOCgc15SHHkO2LRHP2e85SJZASQ3x9DYF1D5D9mL_IaBbD4-DAoRAURGeVDg/exec",
+  "analytics": {
+    "goatcounter": "ramudzuli"
+  }
 }
