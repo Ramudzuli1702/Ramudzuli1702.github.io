@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ramudzuli Ricardo Ralejiba</title>
+  <meta name="description" content="Final-year BSc IT student at the University of Johannesburg. Projects, experience and NdalamoPDF, a free PDF toolkit for Windows.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script>
+    // The theme the visitor chose last time (or their system's), before anything is drawn.
+    try {
+      const saved = localStorage.getItem('theme');
+      const theme = saved || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.dataset.theme = theme;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="nav" id="top">
+    <a class="brand" href="#top" data-bind="profile.shortName">Ricardo</a>
+    <nav aria-label="Sections">
+      <a href="#about"><span>01.</span> About</a>
+      <a href="#experience"><span>02.</span> Experience</a>
+      <a href="#skills"><span>03.</span> Skills</a>
+      <a href="#projects"><span>04.</span> Projects</a>
+      <a href="#ndalamopdf"><span>05.</span> NdalamoPDF</a>
+      <a href="#contact"><span>06.</span> Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch between light and dark">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path class="sun" d="M12 4V2m0 20v-2m8-8h2M2 12h2m13.66-5.66 1.41-1.41M4.93 19.07l1.41-1.41m0-11.32L4.93 4.93m14.14 14.14-1.41-1.41M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/><path class="moon" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="status" data-show="profile.available"><span class="pulse"></span><span data-bind="profile.availableText"></span></p>
+      <p class="mono hello">Hi, my name is</p>
+      <h1 data-bind="profile.name"></h1>
+      <h2 class="role" data-bind="profile.role"></h2>
+      <p class="intro" data-bind="profile.intro"></p>
+      <div class="actions">
+        <a class="button primary" href="#projects">View projects</a>
+        <a class="button" href="#ndalamopdf">Download NdalamoPDF</a>
+        <a class="button" data-href="profile.cv" data-show="profile.cv" download>Download CV</a>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2 class="section-title"><span class="mono">01.</span> About</h2>
+      <div class="about">
+        <div class="about-text" id="about-text"></div>
+        <figure class="photo" data-show="profile.photo"><img data-src="profile.photo" alt="Ramudzuli Ricardo Ralejiba"></figure>
+      </div>
+      <h3 class="sub">Education</h3>
+      <ul class="timeline" id="education"></ul>
+    </section>
+
+    <section id="experience" class="section">
+      <h2 class="section-title"><span class="mono">02.</span> Experience</h2>
+      <div id="experience-list"></div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2 class="section-title"><span class="mono">03.</span> Skills</h2>
+      <div class="skills" id="skills-list"></div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2 class="section-title"><span class="mono">04.</span> Projects</h2>
+      <div class="cards" id="project-cards"></div>
+    </section>
+
+    <section id="ndalamopdf" class="section spotlight">
+      <h2 class="section-title"><span class="mono">05.</span> NdalamoPDF</h2>
+      <div class="spotlight-card">
+        <div class="spotlight-text">
+          <p class="lead">A free PDF toolkit for Windows that I built. It works offline, so your files never leave your PC.</p>
+          <ul class="checks">
+            <li>Merge, split, compress, convert, OCR, sign, redact and more</li>
+            <li>PDF to Word that keeps the layout</li>
+            <li>Delete Page for Microsoft Word</li>
+          </ul>
+          <div class="downloads" id="downloads">
+            <a class="button primary" href="https://github.com/Ramudzuli1702/ndalamo-pdf/releases/latest">Download for Windows</a>
+          </div>
+          <p class="fine" id="download-facts">Windows 10 and 11, 64-bit. Free, with no ads.</p>
+          <a class="text-link" href="project.html?p=ndalamopdf">More about NdalamoPDF →</a>
+        </div>
+        <img class="spotlight-shot" src="media/ndalamopdf/home.png" alt="NdalamoPDF's home screen with all its tools">
+      </div>
+      <div class="reviews" id="reviews" hidden>
+        <h3 class="sub">What people say <span class="rating" id="rating"></span></h3>
+        <div class="review-list" id="review-list"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <p class="mono">06. What's next?</p>
+      <h2>Get in touch</h2>
+      <p>I'm finishing my degree this year and looking for a graduate or junior software role. My inbox is open.</p>
+      <a class="button primary" data-mailto="profile.email">Say hello</a>
+      <div class="socials">
+        <a data-href="profile.github" aria-label="GitHub" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg></a>
+        <a data-href="profile.linkedin" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a data-mailto="profile.email" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.4 7H19.6L12 12.2zM4 8.6V17h16V8.6l-8 5.4-8-5.4z"/></svg></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><p>Designed and built by Ramudzuli Ricardo Ralejiba · <span id="year"></span></p></footer>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

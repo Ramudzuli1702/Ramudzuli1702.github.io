@@ -1,0 +1,140 @@
+{
+  "profile": {
+    "name": "Ramudzuli Ricardo Ralejiba",
+    "shortName": "Ricardo",
+    "role": "Final-year BSc IT student, University of Johannesburg",
+    "available": true,
+    "availableText": "Open to graduate and junior software roles",
+    "intro": "I build working software in my own time: desktop apps, Android apps and web systems, mostly in Java, C# and Kotlin.",
+    "photo": "",
+    "cv": "",
+    "email": "ralidzhivhar@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/ramudzuli-ricardo-ralejiba-232b7b250",
+    "github": "https://github.com/Ramudzuli1702",
+    "location": "Johannesburg, South Africa"
+  },
+  "about": [
+    "Final-year BSc IT student at the University of Johannesburg (Informatics and Computer Science). I spend my own time building working systems, including a point-of-sale system, a church management system with an Android app that syncs over a local network, and NdalamoPDF, a free PDF toolkit for Windows.",
+    "Comfortable with Windows, networking fundamentals and SQL databases, and quick to pick up new tools."
+  ],
+  "education": [
+    { "title": "BSc Information Technology (Informatics and Computer Science)", "place": "University of Johannesburg", "when": "Completing Nov/Dec 2026" },
+    { "title": "Matric Certificate", "place": "Kutama Secondary School", "when": "2021" }
+  ],
+  "experience": [
+    {
+      "title": "Volunteer Teacher",
+      "place": "Tshiungulela Secondary School, Limpopo",
+      "when": "Jan 2026 – Mar 2026",
+      "points": [
+        "Taught Grade 9 Technology and Grade 11 Mathematical Literacy and Physical Science across multiple classes.",
+        "Planned lessons, exercises and assessments aligned with the CAPS curriculum for three subjects at once."
+      ],
+      "tags": ["Teaching", "Planning", "CAPS curriculum"]
+    }
+  ],
+  "skills": [
+    { "group": "Languages", "items": ["Java", "C#", "Kotlin", "JavaScript", "SQL"] },
+    { "group": "Frameworks and tools", "items": ["Spring Boot", "ASP.NET Core", "JavaFX", "Android", "Git", "Maven", "Gradle", "Visual Studio Code", "Android Studio", "Eclipse"] },
+    { "group": "Data and systems", "items": ["MySQL", "SQL Server", "TCP/IP, subnetting, DHCP and DNS", "Windows 10/11 setup and troubleshooting", "Microsoft 365 and Active Directory basics"] }
+  ],
+  "projects": [
+    {
+      "slug": "ndalamopdf",
+      "title": "NdalamoPDF",
+      "tagline": "A free PDF toolkit for Windows that works offline.",
+      "status": "Free download",
+      "featured": true,
+      "tech": ["Java 22", "JavaFX", "Apache PDFBox", "Tesseract OCR", "Apache POI", "C# (Word add-in)", "WiX"],
+      "summary": [
+        "NdalamoPDF puts everyday PDF jobs in one desktop app: merge, split, compress (including down to a size limit for upload portals), convert to and from Word, Excel, pictures and Markdown, OCR for scans, sign, redact, fill forms, protect and compare.",
+        "Everything runs on the PC, so files never leave it. It comes with its own Java runtime and installs in one step, with an optional LibreOffice install for converting Office files."
+      ],
+      "highlights": [
+        "PDF to Word that keeps the original fonts, spacing, tables and pictures.",
+        "Pipelines and watch folders that run several tools on files automatically.",
+        "A Microsoft Word add-in that adds Delete Page to the ribbon and right-click menu.",
+        "A Windows setup with the terms, options and a single install for the app, the add-in and LibreOffice."
+      ],
+      "role": "Designed and built on my own.",
+      "repo": "https://github.com/Ramudzuli1702/ndalamo-pdf",
+      "download": "https://github.com/Ramudzuli1702/ndalamo-pdf/releases/latest",
+      "screenshots": [
+        { "src": "media/ndalamopdf/home.png", "caption": "Home: every tool, recent files, and a drop zone for files" },
+        { "src": "media/ndalamopdf/review.png", "caption": "Tell us what you think: ratings and reviews from inside the app" },
+        { "src": "media/ndalamopdf/word-guide.png", "caption": "Delete Page in Microsoft Word, with a guide in the app" }
+      ],
+      "video": "",
+      "linkedinPost": ""
+    },
+    {
+      "slug": "mbuyedzedzo-pos",
+      "title": "Mbuyedzedzo POS",
+      "tagline": "A point-of-sale system for small businesses.",
+      "status": "Personal project",
+      "featured": true,
+      "tech": ["Java", "JavaFX", "SQL Server", "Apache POI"],
+      "summary": [
+        "A desktop point-of-sale system covering sales, inventory, customer management and reporting."
+      ],
+      "highlights": [
+        "Replaced the dedicated barcode scanner with a companion phone app that scans product barcodes through the camera.",
+        "Added licence-key activation to control which machines can run the software.",
+        "Reports exported to Excel with Apache POI."
+      ],
+      "role": "Designed and built on my own.",
+      "repo": "https://github.com/Ramudzuli1702/Mbuyedzedzo-POS-System",
+      "download": "",
+      "screenshots": [],
+      "video": "",
+      "linkedinPost": ""
+    },
+    {
+      "slug": "afm-vfcc-cms",
+      "title": "Church Management System (AFM VFCC)",
+      "tagline": "Member records, attendance and meetings for a church, with an Android app.",
+      "status": "Personal project",
+      "featured": true,
+      "tech": ["Java", "JavaFX", "Spring Boot", "Kotlin", "Android", "MySQL"],
+      "summary": [
+        "A desktop system for member records, attendance, board meetings and welfare cases."
+      ],
+      "highlights": [
+        "An Android app that syncs attendance and guest registrations to the desktop system over the local Wi-Fi network.",
+        "A Spring Boot service between the apps and the MySQL database."
+      ],
+      "role": "Designed and built on my own.",
+      "repo": "https://github.com/Ramudzuli1702/afm-vfcc-cms",
+      "download": "",
+      "screenshots": [],
+      "video": "",
+      "linkedinPost": ""
+    },
+    {
+      "slug": "event-rsvp",
+      "title": "Event RSVP and Ticketing System",
+      "tagline": "Registration, proof of payment and QR tickets for an event.",
+      "status": "Personal project",
+      "featured": true,
+      "tech": ["C#", "ASP.NET Core", "EF Core", "MySQL", "Android"],
+      "summary": [
+        "A web app where guests register, upload proof of payment and receive a QR ticket by email."
+      ],
+      "highlights": [
+        "Check-in secured with HMAC-signed QR codes, verified by an Android admin app so tickets can't be forged.",
+        "Built for a youth gala that was later cancelled."
+      ],
+      "role": "Designed and built on my own.",
+      "repo": "https://github.com/Ramudzuli1702/afm-youth-gala-rsvp",
+      "download": "",
+      "screenshots": [],
+      "video": "",
+      "linkedinPost": ""
+    }
+  ],
+  "ndalamo": {
+    "repo": "Ramudzuli1702/ndalamo-pdf",
+    "reviewsUrl": "",
+    "reviewsShown": 3
+  }
+}
