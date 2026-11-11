@@ -25,6 +25,14 @@
     return;
   }
 
+  // Visitor counts (GoatCounter: no cookies, no personal details), once a code is set in the admin.
+  const gc = site.analytics && site.analytics.goatcounter;
+  if (gc && /^[a-z0-9-]+$/.test(gc) && !/^(localhost|127\.)/.test(location.hostname)) {
+    const s = document.createElement('script');
+    s.async = true; s.src = 'https://gc.zgo.at/count.js'; s.dataset.goatcounter = `https://${gc}.goatcounter.com/count`;
+    document.head.appendChild(s);
+  }
+
   // Simple bindings: text, show-if-set, links, pictures, email.
   document.querySelectorAll('[data-bind]').forEach(el => { const v = get(site, el.dataset.bind); if (v) el.textContent = v; });
   document.querySelectorAll('[data-show]').forEach(el => { if (!get(site, el.dataset.show)) el.hidden = true; });
