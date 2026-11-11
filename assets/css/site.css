@@ -219,6 +219,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 16px; }
 .form-status.error { color: #E5534B; }
 .footer { text-align: center; padding: 28px 16px; font-size: .85rem; color: var(--muted); border-top: 1px solid var(--border); }
 .footer p { margin: 0; }
+.footer .privacy { margin-top: 6px; font-size: .78rem; opacity: .8; }
 
 /* ── Project page ── */
 .project { padding-top: 56px; padding-bottom: 80px; }
