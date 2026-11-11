@@ -231,8 +231,45 @@
       "role": "Designed and built on my own.",
       "repo": "https://github.com/Ramudzuli1702/afm-vfcc-cms",
       "download": "",
-      "screenshots": [],
-      "video": "",
+      "screenshots": [
+        {
+          "src": "media/afm-cms/dashboard.webp",
+          "caption": "Dashboard: member counts, upcoming events and welfare cases due"
+        },
+        {
+          "src": "media/afm-cms/members.webp",
+          "caption": "Member records with ministries and sub-branches"
+        },
+        {
+          "src": "media/afm-cms/attendance.webp",
+          "caption": "Taking attendance for a Sunday service"
+        },
+        {
+          "src": "media/afm-cms/board.webp",
+          "caption": "The church board"
+        },
+        {
+          "src": "media/afm-cms/calendar.webp",
+          "caption": "The church calendar"
+        },
+        {
+          "src": "media/afm-cms/welfare.webp",
+          "caption": "Welfare cases, from request to report"
+        },
+        {
+          "src": "media/afm-cms/certificates.webp",
+          "caption": "Baptism, appreciation and marriage blessing certificates"
+        },
+        {
+          "src": "media/afm-cms/audit-log.webp",
+          "caption": "The audit log of every change"
+        },
+        {
+          "src": "media/afm-cms/login.webp",
+          "caption": "Signing in"
+        }
+      ],
+      "video": "media/afm-cms/demo.mp4#t=2",
       "linkedinPost": ""
     },
     {
