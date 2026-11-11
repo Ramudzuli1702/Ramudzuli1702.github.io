@@ -193,7 +193,9 @@
       const mb = a => Math.round(a.size / 1048576) + ' MB';
       $('#downloads').innerHTML = [
         full ? `<a class="button primary" href="${esc(full.browser_download_url)}">Download <small>with LibreOffice · ${mb(full)}</small></a>` : '',
-        small ? `<a class="button" href="${esc(small.browser_download_url)}">NdalamoPDF only <small>${mb(small)}</small></a>` : ''
+        small ? (full
+          ? `<a class="button" href="${esc(small.browser_download_url)}">NdalamoPDF only <small>${mb(small)}</small></a>`
+          : `<a class="button primary" href="${esc(small.browser_download_url)}">Download <small>for Windows · ${mb(small)}</small></a>`) : ''
       ].join('');
       const count = setups.reduce((n, a) => n + a.download_count, 0);
       $('#download-facts').textContent = `Version ${rel.tag_name.replace(/^v/, '')} · Windows 10 and 11, 64-bit · Free, with no ads`
