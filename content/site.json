@@ -112,16 +112,40 @@
       "download": "https://github.com/Ramudzuli1702/ndalamo-pdf/releases/latest",
       "screenshots": [
         {
-          "src": "media/ndalamopdf/home.png",
-          "caption": "Home: every tool, recent files, and a drop zone for files"
+          "src": "media/ndalamopdf/home.webp",
+          "caption": "Home: every tool in one place, with your recent files"
         },
         {
-          "src": "media/ndalamopdf/review.png",
-          "caption": "Tell us what you think: ratings and reviews from inside the app"
+          "src": "media/ndalamopdf/suggestions.webp",
+          "caption": "Drop a file and NdalamoPDF suggests what to do with it"
         },
         {
-          "src": "media/ndalamopdf/word-guide.png",
-          "caption": "Delete Page in Microsoft Word, with a guide in the app"
+          "src": "media/ndalamopdf/compress.webp",
+          "caption": "Compress: recommended, strong, or down to a size limit for uploads"
+        },
+        {
+          "src": "media/ndalamopdf/results.webp",
+          "caption": "Results: 3 files compressed, 75% smaller"
+        },
+        {
+          "src": "media/ndalamopdf/workspace.webp",
+          "caption": "The page workspace: rearrange, rotate, delete and crop pages"
+        },
+        {
+          "src": "media/ndalamopdf/pdf-to-word.webp",
+          "caption": "PDF to Word, with page previews"
+        },
+        {
+          "src": "media/ndalamopdf/tour.webp",
+          "caption": "A short tour shows every tool the first time it opens"
+        },
+        {
+          "src": "media/ndalamopdf/dark.webp",
+          "caption": "Dark mode"
+        },
+        {
+          "src": "media/ndalamopdf/word-guide.webp",
+          "caption": "Delete Page for Microsoft Word, with a guide"
         }
       ],
       "video": "",
