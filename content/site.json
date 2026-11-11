@@ -174,8 +174,37 @@
       "role": "Designed and built on my own.",
       "repo": "https://github.com/Ramudzuli1702/Mbuyedzedzo-POS-System",
       "download": "",
-      "screenshots": [],
-      "video": "",
+      "screenshots": [
+        {
+          "src": "media/mbuyedzedzo/sales-cart.webp",
+          "caption": "The till, with specials applied to the basket automatically"
+        },
+        {
+          "src": "media/mbuyedzedzo/payment.webp",
+          "caption": "Taking payment, with the change shown large"
+        },
+        {
+          "src": "media/mbuyedzedzo/reports.webp",
+          "caption": "Sales reports"
+        },
+        {
+          "src": "media/mbuyedzedzo/inventory.webp",
+          "caption": "Inventory"
+        },
+        {
+          "src": "media/mbuyedzedzo/deal-form.webp",
+          "caption": "Setting up a deal step by step"
+        },
+        {
+          "src": "media/mbuyedzedzo/sessions.webp",
+          "caption": "Live till sessions"
+        },
+        {
+          "src": "media/mbuyedzedzo/phone.webp",
+          "caption": "The Android companion: scanning, receipts and stocktaking"
+        }
+      ],
+      "video": "media/mbuyedzedzo/demo.mp4#t=2",
       "linkedinPost": ""
     },
     {
