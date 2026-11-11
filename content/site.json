@@ -18,8 +18,16 @@
     "Comfortable with Windows, networking fundamentals and SQL databases, and quick to pick up new tools."
   ],
   "education": [
-    { "title": "BSc Information Technology (Informatics and Computer Science)", "place": "University of Johannesburg", "when": "Completing Nov/Dec 2026" },
-    { "title": "Matric Certificate", "place": "Kutama Secondary School", "when": "2021" }
+    {
+      "title": "BSc Information Technology (Informatics and Computer Science)",
+      "place": "University of Johannesburg",
+      "when": "Completing Nov/Dec 2026"
+    },
+    {
+      "title": "Matric Certificate",
+      "place": "Kutama Secondary School",
+      "when": "2021"
+    }
   ],
   "experience": [
     {
@@ -30,13 +38,49 @@
         "Taught Grade 9 Technology and Grade 11 Mathematical Literacy and Physical Science across multiple classes.",
         "Planned lessons, exercises and assessments aligned with the CAPS curriculum for three subjects at once."
       ],
-      "tags": ["Teaching", "Planning", "CAPS curriculum"]
+      "tags": [
+        "Teaching",
+        "Planning",
+        "CAPS curriculum"
+      ]
     }
   ],
   "skills": [
-    { "group": "Languages", "items": ["Java", "C#", "Kotlin", "JavaScript", "SQL"] },
-    { "group": "Frameworks and tools", "items": ["Spring Boot", "ASP.NET Core", "JavaFX", "Android", "Git", "Maven", "Gradle", "Visual Studio Code", "Android Studio", "Eclipse"] },
-    { "group": "Data and systems", "items": ["MySQL", "SQL Server", "TCP/IP, subnetting, DHCP and DNS", "Windows 10/11 setup and troubleshooting", "Microsoft 365 and Active Directory basics"] }
+    {
+      "group": "Languages",
+      "items": [
+        "Java",
+        "C#",
+        "Kotlin",
+        "JavaScript",
+        "SQL"
+      ]
+    },
+    {
+      "group": "Frameworks and tools",
+      "items": [
+        "Spring Boot",
+        "ASP.NET Core",
+        "JavaFX",
+        "Android",
+        "Git",
+        "Maven",
+        "Gradle",
+        "Visual Studio Code",
+        "Android Studio",
+        "Eclipse"
+      ]
+    },
+    {
+      "group": "Data and systems",
+      "items": [
+        "MySQL",
+        "SQL Server",
+        "TCP/IP, subnetting, DHCP and DNS",
+        "Windows 10/11 setup and troubleshooting",
+        "Microsoft 365 and Active Directory basics"
+      ]
+    }
   ],
   "projects": [
     {
@@ -45,7 +89,15 @@
       "tagline": "A free PDF toolkit for Windows that works offline.",
       "status": "Free download",
       "featured": true,
-      "tech": ["Java 22", "JavaFX", "Apache PDFBox", "Tesseract OCR", "Apache POI", "C# (Word add-in)", "WiX"],
+      "tech": [
+        "Java 22",
+        "JavaFX",
+        "Apache PDFBox",
+        "Tesseract OCR",
+        "Apache POI",
+        "C# (Word add-in)",
+        "WiX"
+      ],
       "summary": [
         "NdalamoPDF puts everyday PDF jobs in one desktop app: merge, split, compress (including down to a size limit for upload portals), convert to and from Word, Excel, pictures and Markdown, OCR for scans, sign, redact, fill forms, protect and compare.",
         "Everything runs on the PC, so files never leave it. It comes with its own Java runtime and installs in one step, with an optional LibreOffice install for converting Office files."
@@ -60,9 +112,18 @@
       "repo": "https://github.com/Ramudzuli1702/ndalamo-pdf",
       "download": "https://github.com/Ramudzuli1702/ndalamo-pdf/releases/latest",
       "screenshots": [
-        { "src": "media/ndalamopdf/home.png", "caption": "Home: every tool, recent files, and a drop zone for files" },
-        { "src": "media/ndalamopdf/review.png", "caption": "Tell us what you think: ratings and reviews from inside the app" },
-        { "src": "media/ndalamopdf/word-guide.png", "caption": "Delete Page in Microsoft Word, with a guide in the app" }
+        {
+          "src": "media/ndalamopdf/home.png",
+          "caption": "Home: every tool, recent files, and a drop zone for files"
+        },
+        {
+          "src": "media/ndalamopdf/review.png",
+          "caption": "Tell us what you think: ratings and reviews from inside the app"
+        },
+        {
+          "src": "media/ndalamopdf/word-guide.png",
+          "caption": "Delete Page in Microsoft Word, with a guide in the app"
+        }
       ],
       "video": "",
       "linkedinPost": ""
@@ -73,7 +134,12 @@
       "tagline": "A point-of-sale system for small businesses.",
       "status": "Personal project",
       "featured": true,
-      "tech": ["Java", "JavaFX", "SQL Server", "Apache POI"],
+      "tech": [
+        "Java",
+        "JavaFX",
+        "SQL Server",
+        "Apache POI"
+      ],
       "summary": [
         "A desktop point-of-sale system covering sales, inventory, customer management and reporting."
       ],
@@ -95,7 +161,14 @@
       "tagline": "Member records, attendance and meetings for a church, with an Android app.",
       "status": "Personal project",
       "featured": true,
-      "tech": ["Java", "JavaFX", "Spring Boot", "Kotlin", "Android", "MySQL"],
+      "tech": [
+        "Java",
+        "JavaFX",
+        "Spring Boot",
+        "Kotlin",
+        "Android",
+        "MySQL"
+      ],
       "summary": [
         "A desktop system for member records, attendance, board meetings and welfare cases."
       ],
@@ -116,7 +189,13 @@
       "tagline": "Registration, proof of payment and QR tickets for an event.",
       "status": "Personal project",
       "featured": true,
-      "tech": ["C#", "ASP.NET Core", "EF Core", "MySQL", "Android"],
+      "tech": [
+        "C#",
+        "ASP.NET Core",
+        "EF Core",
+        "MySQL",
+        "Android"
+      ],
       "summary": [
         "A web app where guests register, upload proof of payment and receive a QR ticket by email."
       ],
@@ -134,7 +213,8 @@
   ],
   "ndalamo": {
     "repo": "Ramudzuli1702/ndalamo-pdf",
-    "reviewsUrl": "",
+    "reviewsUrl": "https://script.google.com/macros/s/AKfycbzRC_sSDIjOCgc15SHHkO2LRHP2e85SJZASQ3x9DYF1D5D9mL_IaBbD4-DAoRAURGeVDg/exec?reviews=1",
     "reviewsShown": 3
-  }
+  },
+  "contactUrl": "https://script.google.com/macros/s/AKfycbzRC_sSDIjOCgc15SHHkO2LRHP2e85SJZASQ3x9DYF1D5D9mL_IaBbD4-DAoRAURGeVDg/exec"
 }

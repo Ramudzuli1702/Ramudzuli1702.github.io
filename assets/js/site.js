@@ -34,9 +34,59 @@
 
   const tags = items => `<ul class="tags">${items.map(t => `<li>${esc(t)}</li>`).join('')}</ul>`;
 
+  // Until a CV is added, "Download CV" leads to the contact section instead of a missing file.
+  if (!site.profile.cv) document.querySelectorAll('[data-href="profile.cv"]').forEach(a => {
+    a.href = '#contact'; a.removeAttribute('download'); a.title = 'The CV is on its way: ask for it here';
+  });
+  document.querySelectorAll('[data-copy]').forEach(btn => btn.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(get(site, btn.dataset.copy)); btn.textContent = 'Copied'; }
+    catch (e) { btn.textContent = 'Press Ctrl+C'; }
+    setTimeout(() => { btn.textContent = 'Copy'; }, 1800);
+  }));
+
   if ($('#about-text')) renderHome(site);
   if ($('#project')) renderProject(site);
+  if ($('#contact-form')) contactForm(site);
   reveal();
+
+  // The message form: sent to the owner's spreadsheet script (a "Messages" sheet, with an email to
+  // the owner). Robots that fill the hidden field are told it went through, and nothing is sent.
+  function contactForm(site) {
+    const form = $('#contact-form'), status = $('#form-status'), button = $('button[type=submit]', form);
+    const opened = Date.now();
+    const say = (text, kind) => { status.textContent = text; status.className = 'form-status' + (kind ? ' ' + kind : ''); };
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form));
+      form.querySelectorAll('input, textarea').forEach(f => f.classList.remove('invalid'));
+      const missing = ['name', 'email', 'message'].filter(k => !String(data[k] || '').trim());
+      if (data.email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email)) missing.push('email');
+      if (missing.length) {
+        missing.forEach(k => form.elements[k].classList.add('invalid'));
+        say(missing.includes('email') && data.email ? 'Please check your email address.' : 'Please fill in your name, email and message.', 'error');
+        return;
+      }
+      if (data.website || Date.now() - opened < 3000) { say('Thanks, your message was sent.', 'ok'); form.reset(); return; }
+      if (!site.contactUrl) { say(`Messages can't be sent from here yet. Please email ${site.profile.email}.`, 'error'); return; }
+      button.disabled = true; say('Sending…');
+      try {
+        const reply = await fetch(site.contactUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },   // a simple request: no CORS preflight
+          body: JSON.stringify({ kind: 'contact', name: data.name.trim(), email: data.email.trim(), topic: data.topic,
+                                 message: data.message.trim(), page: location.href })
+        });
+        const result = await reply.json();
+        if (!result.ok) throw new Error(result.error || 'not accepted');
+        form.reset();
+        say("Thanks, your message was sent. I'll reply by email.", 'ok');
+      } catch (err) {
+        say(`That didn't go through. Please try again, or email ${site.profile.email}.`, 'error');
+      } finally {
+        button.disabled = false;
+      }
+    });
+  }
 
   function renderHome(site) {
     $('#about-text').innerHTML = site.about.map(p => `<p>${esc(p)}</p>`).join('');
@@ -79,7 +129,7 @@
           `<button type="button" data-i="${i}"><img src="${esc(s.src)}" alt="${esc(s.caption)}" loading="lazy"><span>${esc(s.caption)}</span></button>`).join('')}</div>`
       : '<p class="placeholder">Screenshots are on their way.</p>';
     root.innerHTML = `
-      <div class="eyebrow"><span class="mono">Project</span><span class="badge">${esc(p.status)}</span></div>
+      <div class="eyebrow"><span>Project</span><span class="badge">${esc(p.status)}</span></div>
       <h1>${esc(p.title)}</h1>
       <p class="tagline">${esc(p.tagline)}</p>
       <div class="links">${links}</div>
