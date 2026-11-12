@@ -37,6 +37,7 @@
 
   <main>
     <section class="hero">
+      <div class="hero-text">
       <p class="status" data-show="profile.available"><span class="pulse"></span><span data-bind="profile.availableText"></span></p>
       <p class="hello">Hi, my name is</p>
       <h1 data-bind="profile.name"></h1>
@@ -46,13 +47,14 @@
         <a class="button primary" href="#projects">View projects</a>
         <a class="button" data-href="profile.cv" download>Download CV</a>
       </div>
+      </div>
+      <figure class="hero-photo" data-show="profile.photo"><img data-src="profile.photo" alt="Ramudzuli Ricardo Ralejiba" width="768" height="960"></figure>
     </section>
 
     <section id="about" class="section">
       <h2 class="section-title">About</h2>
       <div class="about">
         <div class="about-text" id="about-text"></div>
-        <figure class="photo" data-show="profile.photo"><img data-src="profile.photo" alt="Ramudzuli Ricardo Ralejiba"></figure>
       </div>
       <h3 class="sub">Education</h3>
       <ul class="timeline" id="education"></ul>
