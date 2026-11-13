@@ -295,8 +295,37 @@
       "role": "Designed and built on my own.",
       "repo": "https://github.com/Ramudzuli1702/afm-youth-gala-rsvp",
       "download": "",
-      "screenshots": [],
-      "video": "",
+      "screenshots": [
+        {
+          "src": "media/event-rsvp/invite.webp",
+          "caption": "The RSVP page guests open from the invitation"
+        },
+        {
+          "src": "media/event-rsvp/web-phone.webp",
+          "caption": "Reserving a seat on a phone, with the deposit and payment slip"
+        },
+        {
+          "src": "media/event-rsvp/ticket-screen.webp",
+          "caption": "A signed QR ticket straight after reserving, and a guest's paid-in-full status"
+        },
+        {
+          "src": "media/event-rsvp/ticket.webp",
+          "caption": "The ticket guests receive by email"
+        },
+        {
+          "src": "media/event-rsvp/status.webp",
+          "caption": "Checking an RSVP: what's paid, what's due, and a top-up"
+        },
+        {
+          "src": "media/event-rsvp/admin-app.webp",
+          "caption": "The Android admin app: dashboard, RSVP list and guest details"
+        },
+        {
+          "src": "media/event-rsvp/admin-app-2.webp",
+          "caption": "Reviewing a payment slip, scanning tickets at the door, and statistics"
+        }
+      ],
+      "video": "media/event-rsvp/demo.mp4#t=2",
       "linkedinPost": ""
     }
   ],
