@@ -109,7 +109,7 @@
       ],
       "role": "Designed and built on my own.",
       "repo": "https://github.com/Ramudzuli1702/ndalamo-pdf",
-      "download": "https://github.com/Ramudzuli1702/ndalamo-pdf/releases/latest",
+      "download": "",
       "screenshots": [
         {
           "src": "media/ndalamopdf/home.webp",
@@ -332,7 +332,10 @@
   "ndalamo": {
     "repo": "Ramudzuli1702/ndalamo-pdf",
     "reviewsUrl": "https://script.google.com/macros/s/AKfycbzRC_sSDIjOCgc15SHHkO2LRHP2e85SJZASQ3x9DYF1D5D9mL_IaBbD4-DAoRAURGeVDg/exec?reviews=1",
-    "reviewsShown": 3
+    "reviewsShown": 3,
+    "version": "1.0.2",
+    "fullMb": 455,
+    "smallMb": 114
   },
   "contactUrl": "https://script.google.com/macros/s/AKfycbzRC_sSDIjOCgc15SHHkO2LRHP2e85SJZASQ3x9DYF1D5D9mL_IaBbD4-DAoRAURGeVDg/exec",
   "analytics": {

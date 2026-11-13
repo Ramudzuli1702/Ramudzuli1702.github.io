@@ -129,7 +129,9 @@
     if (!p) { root.innerHTML = '<p>That project isn\'t here. <a href="index.html#projects">See all projects</a>.</p>'; return; }
     document.title = `${p.title} · ${site.profile.name}`;
     const links = [
-      p.download ? `<a class="button primary" href="${esc(p.download)}">Download</a>` : '',
+      p.slug === 'ndalamopdf'
+        ? `<div class="downloads" data-setups>${setupButtons(site)}</div>`
+        : p.download ? `<a class="button primary" href="${esc(p.download)}">Download</a>` : '',
       p.repo ? `<a class="button" href="${esc(p.repo)}" target="_blank" rel="noopener">View code on GitHub</a>` : ''
     ].join('');
     const gallery = (p.screenshots || []).length
@@ -162,6 +164,7 @@
     }));
     box.addEventListener('click', () => { box.hidden = true; });
     addEventListener('keydown', e => { if (e.key === 'Escape') box.hidden = true; });
+    if (p.slug === 'ndalamopdf') loadDownloads(site);
   }
 
   // A YouTube link becomes the YouTube player; anything else is played as a video file.
@@ -180,27 +183,35 @@
     return `<div class="linkedin-post"><iframe src="${esc(src)}" title="LinkedIn post" loading="lazy"></iframe></div>`;
   }
 
-  // The latest release's setups, straight from GitHub (falls back to the plain link if that fails).
+  // NdalamoPDF's two setups as download buttons that start the download straight away (the
+  // files themselves, never a GitHub page). Shown at once for the version in site.json, then
+  // swapped for the latest release's files, so a new release needs no change here.
+  function setupButtons(site, full, small) {
+    const v = site.ndalamo.version, base = `https://github.com/${site.ndalamo.repo}/releases/download/v${v}/`;
+    full = full || { url: `${base}NdalamoPDF-Setup-${v}-with-LibreOffice.exe`, mb: site.ndalamo.fullMb };
+    small = small || { url: `${base}NdalamoPDF-Setup-${v}.exe`, mb: site.ndalamo.smallMb };
+    return `<a class="button primary" href="${esc(full.url)}" download>Download with LibreOffice <small>${full.mb} MB · converts Word, Excel and PowerPoint too</small></a>`
+      + `<a class="button" href="${esc(small.url)}" download>NdalamoPDF only <small>${small.mb} MB</small></a>`;
+  }
+
   async function loadDownloads(site) {
+    const boxes = document.querySelectorAll('[data-setups]');
+    boxes.forEach(b => { b.innerHTML = setupButtons(site); });
     try {
       const r = await fetch(`https://api.github.com/repos/${site.ndalamo.repo}/releases/latest`);
       if (!r.ok) return;
       const rel = await r.json();
       const setups = rel.assets.filter(a => a.name.endsWith('.exe'));
-      if (!setups.length) return;
-      const full = setups.find(a => /LibreOffice/i.test(a.name));
-      const small = setups.find(a => a !== full);
-      const mb = a => Math.round(a.size / 1048576) + ' MB';
-      $('#downloads').innerHTML = [
-        full ? `<a class="button primary" href="${esc(full.browser_download_url)}">Download <small>with LibreOffice · ${mb(full)}</small></a>` : '',
-        small ? (full
-          ? `<a class="button" href="${esc(small.browser_download_url)}">NdalamoPDF only <small>${mb(small)}</small></a>`
-          : `<a class="button primary" href="${esc(small.browser_download_url)}">Download <small>for Windows · ${mb(small)}</small></a>`) : ''
-      ].join('');
+      const fullAsset = setups.find(a => /LibreOffice/i.test(a.name));
+      const smallAsset = setups.find(a => a !== fullAsset);
+      if (!fullAsset || !smallAsset) return;             // keep the known version's buttons
+      const as = a => ({ url: a.browser_download_url, mb: Math.round(a.size / 1048576) });
+      boxes.forEach(b => { b.innerHTML = setupButtons(site, as(fullAsset), as(smallAsset)); });
       const count = setups.reduce((n, a) => n + a.download_count, 0);
-      $('#download-facts').textContent = `Version ${rel.tag_name.replace(/^v/, '')} · Windows 10 and 11, 64-bit · Free, with no ads`
+      const facts = $('#download-facts');
+      if (facts) facts.textContent = `Version ${rel.tag_name.replace(/^v/, '')} · Windows 10 and 11, 64-bit · Free, with no ads`
         + (count >= 100 ? ` · ${count.toLocaleString()} downloads` : '');
-    } catch (e) { /* the plain link stays */ }
+    } catch (e) { /* the known version's buttons stay */ }
   }
 
   // Reviews the owner chose to show (the spreadsheet script returns only those).
